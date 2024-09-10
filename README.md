@@ -1,6 +1,6 @@
 # Swift's `defer` Keyword: Advanced Usage and Implications
 
-The `defer` keyword in Swift is a powerful feature for managing code execution order and ensuring cleanup operations. This document explores its functionality, use cases, and potential pitfalls, with a focus on aspects relevant to senior iOS engineers.
+The `defer` keyword in Swift is a powerful feature for managing code execution order and ensuring cleanup operations. This document explores its functionality, use cases, and potential pitfalls, with a focus on aspects relevant to iOS engineers and potential interview questions.
 
 ## Overview of `defer`
 
@@ -186,4 +186,29 @@ Demonstrating the behavior of nested `defer` blocks and their execution order.
 
    This ensures that `resource2` is released before `resource1`, which is often necessary for proper resource management.
 
-Understanding these nuances of `defer` is crucial for writing robust, maintainable iOS applications, particularly in scenarios involving resource management, error handling, and complex control flows.
+
+## Conclusion: Tips for Discussing `defer` in Interviews
+
+When preparing for interviews where Swift's `defer` keyword might be discussed, keep these key points in mind:
+
+1. **Emphasize Resource Management**: Highlight `defer`'s effectiveness in ensuring proper resource cleanup, especially in complex functions with multiple exit points.
+
+2. **Articulate Execution Order**: Clearly explain that deferred blocks execute in reverse order of their declaration. This demonstrates understanding of `defer`'s internal mechanism.
+
+3. **Discuss Error Handling Integration**: Show how `defer` can be used in conjunction with do-catch blocks to ensure cleanup code runs regardless of whether an error is thrown.
+
+4. **Mention Performance Considerations**: Acknowledge that while `defer` is powerful, it should be used judiciously, as it can impact performance if overused, especially in tight loops.
+
+5. **Highlight Scope Awareness**: Demonstrate understanding of how `defer` behaves differently in various scopes (functions vs. closures), showcasing depth of knowledge.
+
+6. **Provide Real-World Examples**: Be prepared to give concrete examples of where you've used `defer` in production code, explaining the rationale behind your choice.
+
+7. **Address Common Pitfalls**: Discuss potential misuses of `defer`, such as trying to modify return values or accessing variables that might have been deallocated.
+
+8. **Compare with Alternatives**: Be ready to discuss how and when you might choose `defer` over other Swift features like `guard` statements or traditional try-finally blocks.
+
+9. **Mention Thread Safety**: If relevant, touch on how `defer` can be used in multithreaded environments, particularly for lock management.
+
+10. **Discuss Swift Evolution**: Show awareness of any recent changes or proposals related to `defer` in Swift's evolution process, demonstrating that you stay current with the language.
+
+By articulating these points, you demonstrate not just knowledge of `defer`, but also a nuanced understanding of Swift's design philosophy and best practices in iOS development. This comprehensive grasp of `defer` and its implications in larger codebases is exactly what senior iOS engineering positions often require.
